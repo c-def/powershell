@@ -2,7 +2,7 @@
 # Forked from https://gist.github.com/gabceb/954418
 # Works well using Office 365
 
-$folderpath = "K:\021-PDX-02"
+$folderpath = Read-Host "Please entire file path"
 $filetype ="*xls"
 $convertErr = $false
 $Log = @()

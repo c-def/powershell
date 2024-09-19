@@ -2,7 +2,7 @@ These are PowerShell scripts to convert .xls files to .xlsx and .doc files to .d
 
 PowerShell 7 is required to use the -Parallel flag with ForEach-Object.
 
-PowerShell 7 also requires references to the interoperability dlls for Word and Excel. If you do not have admin access, you will need to copy these dlls from c:\windows\assembly to a folder you have full access to.
+PowerShell 7 also requires references to the interoperability dlls for Word and Excel. If you do not have admin access, you will need to copy these dlls from c:\windows\assembly to a folder you have full access to.<br/>
 For the Excel script, you'll either need to copy Microsoft.Office.Interop.Excel.dll into the same path as the script or reference the path under c:\windows\assembly<br/>
 For the Word script, you'll either need to copy Microsoft.Office.Interop.Word.dll into the same path as the script or reference the path under c:\windows\assembly
 

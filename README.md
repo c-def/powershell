@@ -1,4 +1,4 @@
-These are PowerShell scripts to convert .xls files to .xlsx and .doc files to .docx. After each .xls or .doc file is converted, the origical copy is moved into a new subfolder named "old" within the directory where the file was found. An output file will be written to the specified path.
+These are PowerShell scripts to convert .xls files to .xlsx and .doc files to .docx. After each .xls or .doc file is converted, the origical copy is moved into a new subfolder named "old" within the directory where the file was found. An output file will be written to the specified path. A password value of $null is passed for files that are password protected. This will prevent the application from being loaded and prompting for a password, but the protected files will not be converted.
 
 PowerShell 7 is required to use the -Parallel flag with ForEach-Object.
 

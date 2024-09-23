@@ -57,7 +57,7 @@ ForEach-Object {
 	}
 }
 
-#$Log | Out-File -FilePath ($folderpath + "\outputDOCX" + (Get-Date -Format "ddmmyyyyHHmm") + ".txt")
+$Log | Out-File -FilePath ($folderpath + "\outputDOCX" + (Get-Date -Format "ddmmyyyyHHmm") + ".txt")
 
 $word.Quit()
 $word = $null

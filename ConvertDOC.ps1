@@ -25,7 +25,6 @@ ForEach-Object {
 
 	try
 	{
-		#$document = $word.Documents.Open($_.FullName,0,0,5,$null)
 		$document = $word.Documents.Open($_.FullName,$false,$false,$false,"ttt")
 		$document.SaveAs($path,$Format)
 		$document.Close()

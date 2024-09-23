@@ -15,18 +15,9 @@ $excel = New-Object -ComObject excel.application
 $excel.visible = $false
 $excel.DisplayAlerts = $false
 $excel.AskToUpdateLinks = $false
-Get-ChildItem -Path $folderpath -Include $filetype -recurse | Where-Object {$_.FullName -notlike '*\old\*'} |
-ForEach-Object -Parallel {
-	#Replace braces with parentheses
-	if($_.Name.Contains("["))
-	{
-		Rename-Item -NewName { $_.Name -replace "[","(" }
-	}
-	if($_.Name.Contains("]"))
-	{
-		Rename-Item -NewName { $_.Name -replace "]",")" }
-	}
 
+Get-ChildItem -Path $folderpath -Include $filetype -recurse | Where-Object {$_.FullName -notlike '*\old\*'} |
+ForEach-Object {
 	$path = ($_.fullname).substring(0, ($_.FullName).lastindexOf("."))
 	$oldPath = $path + ".xls"
 	$convertErr = $false
@@ -69,7 +60,7 @@ ForEach-Object -Parallel {
 
 		$Log += $path + " successfully converted"
 
-		move-item $_.fullname $oldFolder
+		move-item -LiteralPath $_.fullname $oldFolder
 		write-host "$oldPath moved to $oldFolder `r`n"
 		$Log += "$oldPath moved to $oldFolder `r`n"
 	}
